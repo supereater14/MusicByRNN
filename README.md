@@ -1,1 +1,2 @@
-# RNN
+# MusicByRNN
+A music-writing AI.
