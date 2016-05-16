@@ -54,7 +54,7 @@ void process_neuron_sigmoid(neuron *n){
   }
 
   //Generate the output
-  n->output = 1.0 / (1.0 + exp(sum));
+  n->output = 1.0 / (1.0 + exp(-sum));
 }
 
 float get_neuron_output(neuron *n){
