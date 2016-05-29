@@ -8,6 +8,7 @@ typedef struct neuron {
   struct neuron** inputs;
   float* inputs_strengths;
   float output;
+  float error;
 } neuron;
 
 /*Creates a blank neuron*/
@@ -36,5 +37,16 @@ void process_neuron_sigmoid(neuron *n);
  *n - neuron to fetch output of
  */
 float get_neuron_output(neuron *n);
+
+/*Blame the right neuron.
+ *n - neuron to process
+ */
+void process_sigmoid_error_neuron(neuron *n);
+
+/*Computes the error of a neuron
+ *Useful for backpropagation of errors, to improve a net
+ *n - neuron who blames its predecessors
+ */
+float get_neuron_error(neuron *n);
 
 #endif /*NEURON_H*/

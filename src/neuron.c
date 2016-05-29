@@ -60,3 +60,17 @@ void process_neuron_sigmoid(neuron *n){
 float get_neuron_output(neuron *n){
   return n->output;
 }
+
+/*Blame the right neuron.
+ *n - neuron to process
+ */
+void process_sigmoid_error_neuron(neuron *n) {
+  unsigned int i;
+  for(i=0; i!=n->num_inputs; ++i) {
+    n->inputs[i]->error += n->error * ((1-n->output) * n->output);
+  }
+}
+
+float get_neuron_error(neuron *n) {
+  return n->error;
+}

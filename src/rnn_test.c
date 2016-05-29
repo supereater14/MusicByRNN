@@ -8,7 +8,7 @@
  * A => B => C => D
        ^ \
        \_|
- */    
+ */
 #include <math.h>
 
 #define NUM_CHARS 256
